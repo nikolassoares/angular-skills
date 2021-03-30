@@ -1,15 +1,22 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>{{card.name}}</mat-card-title>
-  </mat-card-header>
-  <img mat-card-image [src]="card.pic" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      {{card.description}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE {{card.likes}}</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+<div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" [src]="card.pic">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">{{card.name}}<i
+        class="material-icons right">more_vert</i></span>
+  </div>
+  <div class="card-action">
+    <a class="waves-effect black btn" (click)="onLike(card)" *ngIf="status == 0"><i
+        class="material-icons left">thumb_up</i>LIKE {{card.likes}}</a>
+    <a class="waves-effect red darken-3 btn" (click)="onLike(card)" *ngIf="status == 2"><i
+        class="material-icons left">thumb_up</i>LIKE {{card.likes}}</a>
+    <a class="waves-effect light-blue btn" (click)="onLike(card)" *ngIf="status == 1"><i
+        class="material-icons left">thumb_up</i>LIKE {{card.likes}}</a>
+    <a class="waves-effect black btn" (click)="onShare(card)"><i class="material-icons left">reply</i>SHARE </a>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">{{card.name}}<i class="material-icons right">close</i></span>
+    <p>{{card.description}}</p>
+  </div>
+</div>

@@ -1,2 +1,88 @@
 <!--TODO: melhorar o layout dos cards para exibir ao menos 2 por linha em telas > md, e pequenas (sm) 1 -->
-<app-card [card]="card" *ngFor="let card of cards"></app-card>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>My Skills</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="black lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">NSTECH</a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center black-text">My Skills</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Like and Share</h5>
+      </div>
+      <br><br>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="loading" *ngIf="!cards"></div>
+
+      <div class="row">
+        <div class="col s12 m6 l4" *ngFor="let card of cards">
+          <app-card [card]="card"></app-card>
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <footer class="page-footer black">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our
+            full time job. Any amount would help support and continue development on this project and is greatly
+            appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://www.facebook.com">Faceboook</a></li>
+            <li><a class="white-text" href="https://www.instagram.com">Instagram</a></li>
+            <li><a class="white-text" href="https://br.linkedin.com">Linkedin</a></li>
+
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Learn More</h5>
+          <ul>
+            <li><a class="white-text" href="https://edition.cnn.com">CNN</a></li>
+            <li><a class="white-text" href="https://www.bbc.com">BBC</a></li>
+            <li><a class="white-text" href="https://www.thetimes.co.uk">The Times</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+</body>
+
+</html>

@@ -1,3 +1,14 @@
 .example-card {
-    max-width: 400px;
-  }
+  max-width: 400px;
+}
+
+.card-image {
+  min-height: 200px;
+  max-height: 200px;
+}
+.activator {
+  max-height: 175px;
+}
+.card-action a {
+  margin-left: 5px;
+}
